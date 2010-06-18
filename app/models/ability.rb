@@ -12,6 +12,10 @@ class Ability
       can :update, Project do |p|
         p && p.user == user
       end
+      
+      can :update, User do |u|
+        u && user == u
+      end
     else
       can :read, [User, Project]
     end

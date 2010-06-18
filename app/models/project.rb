@@ -23,5 +23,8 @@ class Project < ActiveRecord::Base
   accepts_nested_attributes_for :tasks, 
                                 :reject_if => proc {|t| t['title'].blank? },
                                 :allow_destroy => true
-
+  
+  def self.paginated(params)
+    includes(:user,:tasks).paginate :page => params[:page], :order => 'updated_at DESC'
+  end
 end

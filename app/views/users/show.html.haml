@@ -1,0 +1,9 @@
+%h2= @user.email
+
+Projects
+- @user.projects.each do |project|
+  %ul
+    %li
+      = project.name
+      \|
+      = project.tasks.size

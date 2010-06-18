@@ -1,6 +1,7 @@
 %p
   %b Owner:
-  = @project.user.email
+  = link_to @project.user.email, @project.user
+  
 %p
   %b Name:
   = @project.name

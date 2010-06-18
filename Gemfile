@@ -11,6 +11,7 @@ gem 'haml'
 gem 'formtastic', :git => "git://github.com/justinfrench/formtastic.git", :branch => 'rails3'
 gem "devise", :git => "git://github.com/plataformatec/devise.git"
 gem 'cancan'
+gem 'will_paginate', '3.0.pre'
 
 group :development do
   gem 'wirble'

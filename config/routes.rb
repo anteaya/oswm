@@ -1,10 +1,8 @@
 Oswm::Application.routes.draw do |map|
-  resources :tasks
 
   devise_for :users
-
+  resources :users, :except => [:new, :create]
   resources :projects
-
   root :to => "projects#index"
 
   # The priority is based upon order of creation:
