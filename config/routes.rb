@@ -1,4 +1,6 @@
 Oswm::Application.routes.draw do |map|
+  resources :tasks
+
   devise_for :users
 
   resources :projects

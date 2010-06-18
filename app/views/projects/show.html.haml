@@ -1,4 +1,7 @@
 %p
+  %b Owner:
+  = @project.user.email
+%p
   %b Name:
   = @project.name
 %p
@@ -11,6 +14,14 @@
   %b Involvement:
   = @project.involvement
 
+%h2 Tasks
+- @project.tasks.each do |task|
+  %p
+    = task.title
+  %p
+    = task.description
+
+%br
 - if can? :update, @project
   = link_to 'Edit', edit_project_path(@project)
   \|

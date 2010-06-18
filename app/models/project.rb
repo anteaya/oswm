@@ -19,4 +19,9 @@ class Project < ActiveRecord::Base
   
   # associations
   belongs_to :user
+  has_many :tasks, :dependent => :destroy
+  accepts_nested_attributes_for :tasks, 
+                                :reject_if => proc {|t| t['title'].blank? },
+                                :allow_destroy => true
+
 end

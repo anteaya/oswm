@@ -15,6 +15,7 @@ form.formtastic fieldset ol li fieldset legend { margin-left: -6px;}
 
 form.formtastic fieldset > ol > li { display: block; }
 form.formtastic fieldset { display: block; }
+form.formtastic fieldset > ol > li.text textarea { height: 5em;}
 form.formtastic fieldset.buttons { 
   padding-left: 15%; 
 }

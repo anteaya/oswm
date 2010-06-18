@@ -3,15 +3,17 @@
 %table
   %thead
     %tr
+      %th Creator
       %th Project
       %th Url
       %th Tasks
   %tbody
     - @projects.each do |project|
       %tr
+        %td= project.user.email
         %td= link_to project.name, project
         %td= link_to project.url, project.url, :target => '_blank'
-        %td TASKS
+        %td= project.tasks.size
 
 %br
 
