@@ -3,7 +3,7 @@
   = @project.name
 %p
   %b Url:
-  = @project.url
+  = link_to @project.url, @project.url, :target => '_blank'
 %p
   %b Description:
   = @project.description
@@ -11,6 +11,7 @@
   %b Involvement:
   = @project.involvement
 
-= link_to 'Edit', edit_project_path(@project)
-\|
+- if can? :update, @project
+  = link_to 'Edit', edit_project_path(@project)
+  \|
 = link_to 'Back', projects_path

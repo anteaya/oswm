@@ -1,4 +1,6 @@
 Oswm::Application.routes.draw do |map|
+  devise_for :users
+
   resources :projects
 
   root :to => "projects#index"
