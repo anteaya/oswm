@@ -7,23 +7,19 @@ gem 'rails', '3.0.0.beta4'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+gem 'haml'
+gem 'formtastic', :git => "git://github.com/justinfrench/formtastic.git", :branch => 'rails3'
 
-# Deploy with Capistrano
-# gem 'capistrano'
+group :development do
+  gem 'wirble'
+  gem 'awesome_print'
+  gem 'annotate'
+  gem 'rails3-generators'
+end
 
-# To use debugger
-# gem 'ruby-debug'
+group :test do
+  gem 'factory_girl_rails'
+  gem 'rspec-rails', '>= 2.0.0.beta.8'
+end
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri', '1.4.1'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
 
-# Bundle gems for certain environments:
-# gem 'rspec', :group => :test
-# group :test do
-#   gem 'webrat'
-# end

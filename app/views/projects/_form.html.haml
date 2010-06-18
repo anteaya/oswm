@@ -1,0 +1,16 @@
+= semantic_form_for @project do |form|
+  - if @project.errors.any?
+    #errorExplanation
+      %h2= "#{pluralize(@project.errors.count, "error")} prohibited this project from being saved:"
+      %ul
+        - @project.errors.full_messages.each do |msg|
+          %li= msg
+  
+  = form.inputs do 
+    = form.input :name
+    = form.input :url, :hint => 'a link to the project on github perhaps?'
+    = form.input :description
+    = form.input :involvement
+  
+  = form.buttons do
+    = form.commit_button

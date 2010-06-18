@@ -1,0 +1,26 @@
+# == Schema Information
+#
+# Table name: projects
+#
+#  id          :integer         not null, primary key
+#  name        :string(255)
+#  url         :string(255)
+#  description :text
+#  involvement :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  url: MyString
+  description: MyText
+  involvement: MyText
+
+two:
+  name: MyString
+  url: MyString
+  description: MyText
+  involvement: MyText
