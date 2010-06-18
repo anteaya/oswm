@@ -12,4 +12,7 @@
 #
 
 class Project < ActiveRecord::Base
+  # validations
+  validates :url, :presence => true
+  validates :name, :uniqueness => true, :presence => true
 end
