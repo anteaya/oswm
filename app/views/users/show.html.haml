@@ -7,6 +7,6 @@ Projects
 - @user.projects.each do |project|
   %ul
     %li
-      = project.name
+      = link_to project.name, project
       \|
       = project.tasks.size
