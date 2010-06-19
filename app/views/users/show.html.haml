@@ -1,5 +1,8 @@
 %h2= @user.email
 
+- if can? :update, @user
+  %p= link_to 'Edit Profile', edit_user_path(@user)
+
 Projects
 - @user.projects.each do |project|
   %ul

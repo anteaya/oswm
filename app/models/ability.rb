@@ -9,10 +9,14 @@ class Ability
       can :manage, :all
     when 'developer'
       can :read, :all
+
       can :update, Project do |p|
         p && p.user == user
       end
-      
+      can :destroy, Project do |p|
+        p && p.user == user
+      end
+
       can :update, User do |u|
         u && user == u
       end

@@ -5,7 +5,9 @@ $(function() {
     var regexp  = new RegExp('new_' + assoc, 'g');
     var new_id  = new Date().getTime();
         
-    $(this).parent().before(content.replace(regexp, new_id));    
+    $(this).parent().before(content.replace(regexp, new_id));
+    addZebraStripes();
+    
     return false;
   });
   
@@ -15,6 +17,17 @@ $(function() {
       hidden_field.value = '1';
     }
     $(this).parents('.fields').hide();
+    
+    addZebraStripes();
+    
     return false;
   });
+  
+  addZebraStripes();
+  
 });
+
+function addZebraStripes() {
+  $('#tasks .fields').removeClass('zebra');
+  $('#tasks .fields:visible:even').addClass('zebra');
+};

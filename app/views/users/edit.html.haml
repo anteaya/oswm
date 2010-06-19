@@ -1,0 +1,12 @@
+%h2 Edit Profile
+
+= semantic_form_for @user do |form|
+  
+  = form.inputs do
+    = form.input :email
+    
+    - if admin?
+      = form.input :role, :as => :select, :collection => User::ROLES
+    
+  = form.buttons do
+    = form.commit_button

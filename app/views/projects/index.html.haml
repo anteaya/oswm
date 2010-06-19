@@ -13,7 +13,7 @@
   %tbody
     - @projects.each do |project|
       %tr
-        %td= project.user.email
+        %td= link_to project.user.email, project.user
         %td= link_to project.name, project
         %td= link_to project.url, project.url, :target => '_blank'
         %td= project.tasks.size

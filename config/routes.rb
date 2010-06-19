@@ -3,6 +3,8 @@ Oswm::Application.routes.draw do |map|
   devise_for :users
   resources :users, :except => [:new, :create]
   resources :projects
+  
+  match 'admin' => 'admin#index'
   root :to => "projects#index"
 
   # The priority is based upon order of creation:

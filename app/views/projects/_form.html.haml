@@ -12,10 +12,11 @@
     = form.input :description
     = form.input :involvement
   
-  = form.semantic_fields_for :tasks do |task_form|
-    = render :partial => 'task', :locals => {:f => task_form}
+  #tasks
+    = form.semantic_fields_for :tasks do |task_form|
+      = render :partial => 'task', :locals => {:f => task_form}
     
-  %p= add_child_link 'Add Task', :tasks
+    %p= add_child_link 'Add Task', :tasks
   
   = new_child_fields_template(form, :tasks)
   

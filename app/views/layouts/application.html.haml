@@ -4,21 +4,26 @@
     %title Opensource it with me!
     = formtastic_stylesheet_link_tag
     = stylesheet_link_tag 'scaffold', 'main'
-    = javascript_include_tag 'jquery-1.4.2.min', 'application'
+    = javascript_include_tag 'jquery-1.4.2.min', 'rails', 'application'
     = csrf_meta_tag
     = yield(:head)
   %body
     #container
-      #user_nav
-        - if user_signed_in?
-          = current_user.email
-          |
-          = link_to "Sign out", destroy_user_session_path
-        - else
-          = link_to "Sign up", new_user_registration_path
-          or 
-          = link_to "sign in", new_user_session_path
-          
+    
+      #header
+        #logo
+          = link_to 'OpenSourceitwith.me', root_path
+        #user_nav
+          - if user_signed_in?
+            = current_user.email
+            |
+            = link_to "Sign out", destroy_user_session_path
+          - else
+            = link_to "Sign up", new_user_registration_path
+            or 
+            = link_to "sign in", new_user_session_path
+        .clear
+        
       - flash.each do |name, msg|
         = content_tag :div, msg, :id => "flash_#{name}"
         

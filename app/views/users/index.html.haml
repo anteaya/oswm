@@ -1,0 +1,17 @@
+%h2 Developers
+
+.flickr_pagination
+  = will_paginate @users
+
+%table
+  %thead
+    %tr
+      %th Email
+      %th Role
+      %th Projects
+  %tbody
+    - @users.each do |user|
+      %tr
+        %td= link_to user.email, user
+        %td= user.role
+        %td= user.projects.size
