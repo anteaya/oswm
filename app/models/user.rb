@@ -20,24 +20,26 @@
 #
 
 class User < ActiveRecord::Base
-  
+
   ROLES = %w[admin developer]
-  
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable, :lockable and :timeoutable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+    :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation
-  
+  attr_accessible :email, :password, :password_confirmation, :role
+
   # associations
   has_many :projects, :dependent => :destroy
-  
+
   def self.paginated(params)
-    includes(:projects).paginate :page => params[:page], :order => 'role, updated_at DESC'
+    includes(:projects).paginate :page => params[:page],
+      :order    => 'role, updated_at DESC',
+      :per_page => 10
   end
-  
+
   def admin?
     role == 'admin'
   end

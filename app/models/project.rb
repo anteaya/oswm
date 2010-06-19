@@ -16,14 +16,14 @@ class Project < ActiveRecord::Base
   # validations
   validates :url, :presence => true
   validates :name, :uniqueness => true, :presence => true
-  
+
   # associations
   belongs_to :user
   has_many :tasks, :dependent => :destroy
-  accepts_nested_attributes_for :tasks, 
-                                :reject_if => proc {|t| t['title'].blank? },
-                                :allow_destroy => true
-  
+  accepts_nested_attributes_for :tasks,
+    :reject_if => proc {|t| t['title'].blank? },
+    :allow_destroy => true
+
   def self.paginated(params)
     includes(:user,:tasks).paginate :page => params[:page], :order => 'updated_at DESC'
   end
