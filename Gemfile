@@ -13,6 +13,8 @@ gem "devise", :git => "git://github.com/plataformatec/devise.git"
 gem 'cancan'
 gem 'will_paginate', '3.0.pre'
 
+gem 'capistrano'
+
 group :development do
   gem 'wirble'
   gem 'awesome_print'
