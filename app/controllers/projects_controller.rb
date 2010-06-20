@@ -43,7 +43,7 @@ class ProjectsController < ApplicationController
   # POST /projects.xml
   def create
     # @project = Project.new(params[:project])
-
+    @project.user = current_user
     respond_to do |format|
       if @project.save
         format.html { redirect_to(@project, :notice => 'Project was successfully created.') }
