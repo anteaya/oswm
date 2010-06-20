@@ -9,7 +9,8 @@ class Ability
       can :manage, :all
     when 'developer'
       can :read, :all
-
+      
+      can :create, Project
       can :update, Project do |p|
         p && p.user == user
       end

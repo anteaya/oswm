@@ -15,6 +15,7 @@
           = link_to 'OpenSourceitwith.me', root_path
         #user_nav
           - if user_signed_in?
+            = link_to 'New Project', new_project_path
             - if admin?
               = link_to 'Administration', admin_path
             = current_user.email
@@ -23,7 +24,7 @@
           - else
             = link_to "Sign up", new_user_registration_path
             or 
-            = link_to "sign in", new_user_session_path
+            = link_to "Sign in", new_user_session_path
         .clear
         
       - flash.each do |name, msg|
