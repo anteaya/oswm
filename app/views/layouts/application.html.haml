@@ -13,6 +13,7 @@
       #header
         #logo
           = link_to 'OpenSourceitwith.me', root_path
+          
         #user_nav
           - if user_signed_in?
             = link_to 'New Project', new_project_path
