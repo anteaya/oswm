@@ -1,0 +1,20 @@
+#help-area
+  - if user_signed_in?
+    - if current_user.projects.size == 0
+      %ul.create-project
+        %li.intro Get Involved!
+        %li.step1
+          = link_to 'Add', new_project_path
+          a project you want help with!
+  - else
+    %ul.help-out
+      %li.intro Get Involved!
+      %li.step1
+        = link_to 'Create', new_user_registration_path
+        an Account
+      %li.step2
+        Find a Project!
+      %li.step3
+        Help out!
+      
+.clear

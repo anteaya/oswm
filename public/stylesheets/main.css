@@ -25,7 +25,7 @@ a {
   clear: both;
   padding: 5px 8px;
   margin: 10px 0;
-  width: 400px; }
+  width: 800px; }
 
 #flash_notice {
   background-color: #ccffcc;
@@ -112,3 +112,22 @@ a {
     margin-right: 1em; }
   .flickr_pagination .next_page {
     margin-left: 1em; }
+
+#help-area {
+  width: 90%;
+  margin: 10px auto; }
+
+ul.create-project {
+  width: 70%; }
+
+ul.help-out, ul.create-project {
+  font-size: 1.5em;
+  color: black; }
+  ul.help-out li, ul.create-project li {
+    list-style: none;
+    float: left;
+    padding: 10px; }
+  ul.help-out li.intro, ul.help-out li.step3, ul.create-project li.intro, ul.create-project li.step3 {
+    color: #ff4040; }
+  ul.help-out li.step1 a, ul.create-project li.step1 a {
+    color: #123eab; }
