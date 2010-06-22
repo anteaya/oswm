@@ -131,3 +131,17 @@ ul.help-out, ul.create-project {
     color: #ff4040; }
   ul.help-out li.step1 a, ul.create-project li.step1 a {
     color: #123eab; }
+
+#projects .project {
+  float: left; }
+  #projects .project .email {
+    float: left; }
+  #projects .project .name {
+    float: left; }
+  #projects .project .url {
+    margin-right: 20px;
+    float: right; }
+  #projects .project .tasks {
+    float: right; }
+  #projects .project .desc {
+    padding: 5px 10px 20px 10px; }

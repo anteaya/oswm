@@ -1,25 +1,23 @@
 = render 'partials/help'
 
-%h1 Listing projects
+%h1= page_entries_info(@projects)
 
 .flickr_pagination
   = will_paginate @projects
 
-%table
-  %thead
-    %tr
-      %th Creator
-      %th Project
-      %th Url
-      %th Tasks
-  %tbody
-    - @projects.each do |project|
-      %tr
-        %td= link_to project.user.email, project.user
-        %td= link_to project.name, project
-        %td= link_to project.url, project.url, :target => '_blank'
-        %td= project.tasks.size
-
+#projects
+  - @projects.each do |project|
+    .project
+      -# .email= link_to project.user.email, project.user
+      .name= link_to project.name, project
+      .tasks
+        %b Tasks:
+        = project.tasks.size
+      .url= link_to project.url, project.url, :target => '_blank'
+        
+      .clear
+      .desc= project.description
+    .clear
 %br
 
 = link_to 'New project', new_project_path if can? :create, Project
