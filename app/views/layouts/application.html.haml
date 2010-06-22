@@ -32,3 +32,5 @@
         = content_tag :div, msg, :id => "flash_#{name}"
         
       = yield
+
+  =render :partial => 'layouts/google' if Rails.env == 'production'
