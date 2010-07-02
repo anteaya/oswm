@@ -1,26 +1,28 @@
-%p
-  %b Owner:
-  = link_to @project.user.email, @project.user
+#project_header
+  %p
+    %b Owner:
+    = link_to @project.user.email, @project.user
   
-%p
-  %b Name:
-  = @project.name
-%p
-  %b Url:
-  = link_to @project.url, @project.url, :target => '_blank'
-%p
-  %b Description:
-  = @project.description
-%p
-  %b Involvement:
-  = @project.involvement
+  %p
+    %b Name:
+    = @project.name
+  %p
+    %b Url:
+    = link_to @project.url, @project.url, :target => '_blank'
+  %p
+    %b Description:
+    = @project.description
+  %p
+    %b Involvement:
+    = @project.involvement
 
-%h2 Tasks
-- @project.tasks.each do |task|
-  %p
-    = task.title
-  %p
-    = task.description
+#project_tasks
+  .tasks_content
+    - @project.tasks.each do |task|
+      %p.project_title
+        = task.title
+      %p.project_description
+        = task.description
 
 %br
 - if can? :update, @project

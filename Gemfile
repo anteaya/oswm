@@ -9,7 +9,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 gem 'haml'
 gem 'formtastic', :git => "git://github.com/justinfrench/formtastic.git", :branch => 'rails3'
-gem "devise", :git => "git://github.com/plataformatec/devise.git"
+gem "devise", '1.1.rc2'
 gem 'cancan'
 gem 'will_paginate', '3.0.pre'
 

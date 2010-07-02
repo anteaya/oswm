@@ -3,6 +3,9 @@ body {
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px; }
 
+p {
+  line-height: 2.5em; }
+
 a {
   color: blue; }
   a img {
@@ -143,3 +146,20 @@ ul.help-out, ul.create-project {
   float: right; }
 #projects .project .desc {
   padding: 5px 10px 20px 10px; }
+
+#project_header {
+  padding: 1em 6em; }
+
+#project_tasks {
+  background: #dedede;
+  margin: 0 1em; }
+  #project_tasks p {
+    line-height: 1.8em; }
+  #project_tasks .tasks_content {
+    padding: 1em; }
+    #project_tasks .tasks_content p.project_title {
+      font-size: 1.05em;
+      font-style: italic; }
+    #project_tasks .tasks_content p.project_description {
+      margin-left: 1em;
+      margin-bottom: 0.5em; }
